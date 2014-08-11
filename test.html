@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="fr"> TEST 2 modif rakoto
+	<head>
+    <meta charset="utf-8"/>
+    <title>boook.io</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta content="boook.io" name="description">
+    <meta content="boook.io" name="author">
+
+    <link href="/css/bootstrap.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="/css/semantic.css">
+    <link href="css/main.css" rel="stylesheet">
+
+         <link rel="stylesheet" type="text/css" href="css/examples.css" media="all" />
+    <link rel="stylesheet" type="text/css" href="css/transitions.css" media="all" />
+    <link rel="stylesheet" href="css/dd.css">
+    
+
+
+    <link href="http://getbootstrap.com/2.3.2/assets/js/google-code-prettify/prettify.css" rel="stylesheet" />
+    <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+    <link href='//fonts.googleapis.com/css?family=Satisfy' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Open+Sans:400,700,300,600' rel='stylesheet' type='text/css'>
+
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <!-- Font Awesome  -->
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="js/jquery-1.10.2.min.js"></script>
+    <link href="css/mainBoook.css" rel="stylesheet">
+    <script src="libs/angular.min.js"></script>
+    <script type="text/javascript" src="libs/jquery.dd.js"></script>
+        
+    <!-- Favicon and touch icons  -->
+    <link href="ico/apple-touch-icon-144-precomposed.png" rel="apple-touch-icon-precomposed" sizes="144x144">
+    <link href="ico/apple-touch-icon-114-precomposed.png" rel="apple-touch-icon-precomposed" sizes="114x114">
+    <link href="ico/apple-touch-icon-72-precomposed.png" rel="apple-touch-icon-precomposed" sizes="72x72">
+    <link href="ico/apple-touch-icon-57-precomposed.png" rel="apple-touch-icon-precomposed">
+    <link href="ico/favicon.png" rel="shortcut icon">
+    <link rel="stylesheet" href="css/flags-dd.css">
+
+
+
+
+    </head>
+
+	<body ng-app="Boook" ng-controller="BoookCtrl">
+
+	<!-- Navigation -->
+        <div class="container" ng-show="headerAuth">
+			<a href="/">
+			<img class="boook_icon" src="http://media.boook.io/images/logo_boookio.png"></i>
+			</a>
+
+            <i class="nav-language" ng-show="navLanguage">Language : 
+                <select class="noStyle" id="navLanguage"  ng-model="langSelected" ng-change="changeLanguage(langSelected)">
+                    <option value="en" data-image='css/blank.gif' data-imagecss='flag us' data-title='fr'>English</option>
+                    <option value="fr" data-image='css/blank.gif' data-imagecss='flag fr' data-title='fr'>Français</option>
+                    <option value="es" data-image='css/blank.gif' data-imagecss='flag es' data-title='fr'>Espagnol</option>
+                    <option value="de" data-image='css/blank.gif' data-imagecss='flag de' data-title='fr'>Deutsch</option>
+                </select>
+        </i>
+	    </div>
+
+
+    <!-- Navigation -->
+        <header ng-show="headerLogged" class="headerLogged">
+            <div class="navbar navbar-fixed-top">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a href="boook.html">
+                        <img class="nav pull-left" src="./img/logo_boookio.png"></i>
+                        </a>
+
+
+                        <div class="nav-collapse collapse">
+                            <ul class="nav pull-right">
+                <li><a href="#row2"><i class="icon-star"></i> vos histoires</a></li>
+                                <li><a href="#row2"><i class="icon-star-empty"></i> mon feed</a></li>
+                <li><a data-toggle="dropdown" href="#">
+                <img src="http://webservices.nleurope.com/media/picture/display/507eb3e470f7998056010000" class="img-rounded-account img-circle" alt="" width="30"> {{ username }}</a>
+                     <ul class="dropdown-menu">
+                        <li><a href="#"><i class="icon-fixed-width icon-user"></i> Mon compte</a></li>
+                        <li><a href="#"><i class="icon-cogs"></i> Paramètres</a></li>
+                        <li><a href="#"><i class="icon-book"></i> Aide</a></li>
+                        <li class="divider"></li>
+                        <li><a href="/session/logout"><i class="icon-off"></i> Déconnexion</a></li>
+                        </ul>
+                            </li>
+  
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- .navbar -->
+     </header>
+
+
+      <div ng-view></div>
+
+<!-- Footer -->
+
+       
+        <div class="boook_footer">
+              Made with ? in France © boook.io, 2013 &nbsp;
+              <a href="http://blog.boook.io">Blog</a>&nbsp;
+              <a href="/about">About</a>&nbsp;
+              <a href="mailto:info@boook.io">Email Us</a>&nbsp;
+              <a href="/faq">FAQ</a>&nbsp;
+              <a href="/developers">Developers</a>&nbsp;
+        </div>
+
+
+    <!-- javascript
+    ================================================== -->
+
+    
+    <script src="js/bootstrap.js"></script>
+    <script src="controller/BoookCtrl.js"></script>
+    <script src="js/jquery.collagePlus.js"></script>
+    <script src="js/jquery.removeWhitespace.js"></script>
+    <script src="js/jquery.collageCaption.js"></script>
+    <script src="helper/helper.js"></script>
+
+     <script language="javascript">
+        $(document).ready(function(e) {
+            try {
+            $("body select").msDropDown();
+            } catch(e) {
+            alert(e.message);
+            }
+        });
+        </script>
+
+     
+     
+    
+    </body>
+</html>
